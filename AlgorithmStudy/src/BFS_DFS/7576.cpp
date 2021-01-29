@@ -1,4 +1,4 @@
-/* Silver 1, �丶�� */
+/* Silver 1, Åä¸¶Åä */
 
 #include <iostream>
 #include <vector>
@@ -44,7 +44,7 @@ int main() {
 
 	bfs();
 
-	//cout answer board
+	//board
 	int answer = 0;
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < m; j++) {
