@@ -1,4 +1,4 @@
-/* Silver 1, 토마토 */
+/* Silver 1, 횇채쨍쨋횇채 */
 
 //일어날 수 있는 케이스 전부 염두에 두기
 #include <iostream>
@@ -45,7 +45,7 @@ int main() {
 
 	bfs();
 
-	//cout answer board
+	//board
 	int answer = 0;
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < m; j++) {
