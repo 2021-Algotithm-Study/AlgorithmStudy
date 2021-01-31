@@ -1,5 +1,6 @@
 /* Silver 1, 토마토 */
 
+//일어날 수 있는 케이스 전부 염두에 두기
 #include <iostream>
 #include <vector>
 #include <queue>
