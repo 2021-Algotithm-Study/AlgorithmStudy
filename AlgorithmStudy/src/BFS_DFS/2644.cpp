@@ -40,13 +40,6 @@ int main(void){
         family[temp2][temp1] = 1;
     }
     
-    for(int i = 1; i <= n; i++){
-        
-        for(int j = 1; j <= n; j++){
-            cout << family[i][j];
-        }
-        cout << "\n";
-    }
     bfs(x);
     if (depth[y] != 0)
         cout << depth[y] << endl;
