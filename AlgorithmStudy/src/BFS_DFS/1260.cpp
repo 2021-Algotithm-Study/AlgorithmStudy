@@ -48,6 +48,5 @@ int main() {
 	dfs(v);
 	cout << "\n";
 	bfs(v);
-	system("pause");
 	return (0);
 }

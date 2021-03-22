@@ -1,4 +1,4 @@
-//2667 단지번호 붙이기
+//2667 ??????? ?????
 
 #include <iostream>
 #include <vector>
@@ -55,7 +55,6 @@ int	main(void) {
 	cout << total;
 	for (int i = 0; i < building.size(); i++)
 		cout << "\n" << building[i];
-	system("pause");
 
 	return (0);
 }
