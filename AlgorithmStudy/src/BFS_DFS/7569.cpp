@@ -1,55 +1,65 @@
 #include <iostream>
 #include <queue>
-
+#include <algorithm>
 using namespace std;
 
-int m, n, h;
-int board[101][101][101] = {0};
-int visit[101][101][101] = {0};
-int dx[] = {0, -1, 0, 1, 0, 0};
-int dy[] = {-1, 0, 1, 0, 0, 0};
-int dz[] = {0, 0, 0, 0, 1, -1};
+int row, col, h;
+int box[102][102][102];
+int dz[6] = { 0,0,0 ,0,-1,1 };
+int dx[6] = {0,0 ,1,-1,0,0};
+int dy[6] = {-1,1,0,0,0,0 };
 
-struct tomato {
+int check[102][102][102];
+int day = 0;
+
+struct Tomato{
+    Tomato(int X, int Y, int Z) : x(X), y(Y), z(Z){}
     int x, y, z;
 };
 
-void bfs(int x, int y, int z){
-    queue<tomato> q;
-    tomato temp;
-    temp.x = x;
-    temp.y = y;
-    temp.z = z;
-    q.push(temp);
-    check[x][y][z] = 1;
-    while (!q.empty()){
-        for(int i = 0; i < 6; i++){
-            int nx;
-            int ny;
-            int nz;
-        }
-    }
-}
-
-int main(void){
-    
-    cin >> m >> n >> h;
-    for(int i = 0; i < h; i++){
-        for(int j = 0; j < n; j++){
-            for(int k = 0; k < m; k++){
-                cin >> board[i][j][k];
-            }            
-        }
-    }
-    
-    for(int i = 0; i < h; i++){
-        for(int j = 0; j < n; j++){
-            for(int k = 0; k < m; k++){
-                if(board[i][j][k] == 1 && !check[i][j][k]){
-                    bfs(i, j, k);
+int main() {
+	ios::sync_with_stdio(NULL);
+	cin.tie(NULL);
+	cin >> col >> row >> h;
+	queue<Tomato> q;
+	for (int i = 0; i < h; i++) {
+		for (int j = 0; j < row; j++) {
+			for(int k = 0; k < col ; k++) {
+				cin >> box[i][j][k];
+				if (box[i][j][k] == 1) {
+					q.push(Tomato(i, j, k));
+				}
+				if (box[i][j][k] == 0)
+					check[i][j][k] = -1;
+			}
+		}
+	}
+	while (!q.empty()) {
+		Tomato temp = q.front();
+		q.pop();
+		for (int i = 0; i < 6; i++) {
+			int nz = temp.x + dz[i];
+			int nx = temp.y+ dx[i];
+			int ny = temp.z + dy[i];
+			if (nx >= 0 && nx < row && ny >= 0 && ny < col && nz >= 0 && nz < h){
+			    if (check[nz][nx][ny] < 0){
+			        check[nz][nx][ny] = check[temp.x][temp.y][temp.z] + 1;
+			        q.push(Tomato(nz, nx, ny));
                 }
             }
-        }
-    }
-    return (0);
+
+		}
+	}
+	for (int i = 0; i < h; i++) {
+		for (int j = 0; j < row; j++) {
+			for (int k = 0; k < col; k++) {
+				if (check[i][j][k] == -1) {
+					cout << -1;
+					return 0;
+				}
+				day = max(day, check[i][j][k]);
+			}
+		}
+	}
+	cout << day;
 }
