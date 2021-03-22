@@ -1,4 +1,6 @@
 #include <iostream>
+//7569 ≈‰∏∂≈‰ (Silver1)
+
 #include <queue>
 #include <algorithm>
 using namespace std;
