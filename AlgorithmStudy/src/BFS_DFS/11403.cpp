@@ -30,7 +30,8 @@ int main(void){
 
     for(int i = 0; i < n; i++){
         for(int j = 0; j < n; j++)
-            dfs(i, j);
+            if(board[i][j])
+                dfs(i, j);
     }
 
     for(int i = 0; i < n; i++){
