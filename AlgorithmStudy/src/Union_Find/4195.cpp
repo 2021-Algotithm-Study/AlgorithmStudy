@@ -1,64 +1,53 @@
+//4195 模备 匙飘况农 (Gold 2)
+
 #include <iostream>
-#include <string>
 #include <map>
 #include <algorithm>
 
 using namespace std;
 
-int m;
-int group_leader[200001], group_size[200001];
+int f, n;
+int group[200001], g_size[200001];
 
-int find_group(int x)
-{
-	if (x == group_leader[x])
-		return x;
-	return group_leader[x] = find_group(group_leader[x]);
+int find_group(int x){
+    if(group[x] == x)
+        return x;
+    return (group[x] = find_group(group[x]));
 }
 
-void union_group(int x, int y)
-{
-	if (group_size[x] < group_size[y])
-		swap(x, y);
+void union_group(int x, int y){
+    if (g_size[x] < g_size[y]){
+        swap(x, y);
+    }
+    group[y] = x;
+    g_size[x] += g_size[y];
+    g_size[y] = 0;
 
-	group_leader[y] = x; 
-    group_size[x] += group_size[y];
-	group_size[y] = 0;
 }
-int main(void)
-{
-	ios_base::sync_with_stdio(0);
-	cin.tie(0);
-	int f;
-	cin >> f;
 
-	for (int t = 0; t < f; t++)
-	{
-		cin >> m;
-
-		for (int i = 0; i <= 2*m; i++)
-		{
-			group_leader[i] = i;
-			group_size[i] = 1;
-		}
-		map<string, int> people;
-		int id = 1;
-		
-		for (int i = 0; i < m; i++)
-		{
-			string temp1, temp2;
-			cin >> temp1 >> temp2;
-			if (!people.count(temp1))
-				people[temp1] = id++;
-			if (!people.count(temp2))
-				people[temp2] = id++;
-
-			int temp1_group = find_group(people[temp1]);
-			int temp2_group = find_group(people[temp2]);
-
-			if (temp1_group != temp2_group)
-				union_group(temp1_group, temp2_group);
-			cout << max(group_size[temp1_group], group_size[temp2_group]) << "\n";
-		}
-	}
-	return 0;
+int main(){
+    cin >> f;
+    while (f--){
+        cin >> n;
+        for(int i = 0; i <= 2*n; i++){
+            group[i] = i;
+            g_size[i] = 1;
+        }
+        map<string, int> people;
+        int id = 0;
+        for(int i = 0; i < n; i++){
+            string temp1, temp2;
+            cin >> temp1 >> temp2;
+            if (!people.count(temp1))
+                people[temp1] = id++;
+            if (!people.count(temp2))
+                people[temp2] = id++;
+            int t1_g = find_group(people[temp1]);
+            int t2_g = find_group(people[temp2]);
+            if (t1_g != t2_g)
+                union_group(t1_g, t2_g);
+            cout << max(g_size[t1_g], g_size[t2_g]) << "\n";
+        }
+    }
+    return (0);
 }
