@@ -1,4 +1,4 @@
-//15649 N°ú M(1)
+//15650 N°ú M(2)
 #include <iostream>
 
 using namespace std;
