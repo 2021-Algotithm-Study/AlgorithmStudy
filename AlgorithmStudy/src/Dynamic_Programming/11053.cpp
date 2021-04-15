@@ -1,6 +1,38 @@
 //11053 가장 긴 증가하는 부분 수열 (Silver 2)
 #include <iostream>
 
+using namespace std; 
+
+int arr[1001];
+int dp[1001] = {1, };
+int n;
+
+int main() { 
+    std::ios::sync_with_stdio(false); 
+    //input
+    cin >> n; 
+    for (int i = 0; i < n; i++)
+        cin >> arr[i]; 
+    
+    int answer = 1; 
+    for (int i = 0; i < n; ++i) { 
+        int cur = arr[i]; 
+        for (int j = 0; j < i; ++j) {
+            if (cur > arr[j]) { 
+                dp[i] = max(dp[i], dp[j] + 1); 
+                
+            } 
+        } 
+        answer = max(answer, dp[i]); 
+    } 
+    cout << sol << "\n"; 
+    return 0; 
+    
+}
+
+/*
+#include <iostream>
+
 using namespace std;
 
 int dp[1001];
@@ -35,3 +67,4 @@ int main(){
     cout << dp[0];
     return 0;
 }
+*/
