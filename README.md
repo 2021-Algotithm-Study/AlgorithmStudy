@@ -1,6 +1,22 @@
 # AlgorithmStudy
-Baekjoon, Programmers
+Baekjoon, Programmers, SWEA
 
-C++, Java
+>For much prettier algorithm. 2021-
 
-For much prettier algorithm. 2021-
+**C++**
+~~~c++
+ios::sync_with_stdio(false);
+cin.tie(NULL);
+cout.tie(NULL);
+~~~
+
+**Java**
+~~~java
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        
+br.close();
+bw.flush();
+bw.close();
+~~~
+
