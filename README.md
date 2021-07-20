@@ -1,14 +1,16 @@
 # AlgorithmStudy
-Baekjoon, Programmers
+Baekjoon, Programmers, SWEA
 
-C++
+>For much prettier algorithm. 2021-
+
+**C++**
 ~~~c++
 ios::sync_with_stdio(false);
 cin.tie(NULL);
 cout.tie(NULL);
 ~~~
 
-Java
+**Java**
 ~~~java
 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -18,4 +20,3 @@ bw.flush();
 bw.close();
 ~~~
 
-For much prettier algorithm. 2021-
