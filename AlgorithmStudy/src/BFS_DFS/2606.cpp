@@ -1,4 +1,4 @@
-//2606 바이러스 (Silver 3)
+//2606 ġ�� (Silver 3)
 #include <iostream>
 #include <queue>
 

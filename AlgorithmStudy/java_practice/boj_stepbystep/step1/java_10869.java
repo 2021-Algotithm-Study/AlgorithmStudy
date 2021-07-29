@@ -1,5 +1,4 @@
-//1000 A+B(Bronze 5)
-//type casting 들어가더라도 둘 다 buffered 쓰는 게 훨씬 빠르다.  
+//10869 사칙연산(Bronze 5)
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;

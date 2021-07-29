@@ -16,7 +16,6 @@ void getComb(int ctr){
         return;
     }
     for(int i = 0; i < N; i++){
-        //if (!n[i]) continue;
         if (!visit[i] && n[i] > arr[ctr-1]){
             visit[i] = true;
             arr[ctr] = n[i];

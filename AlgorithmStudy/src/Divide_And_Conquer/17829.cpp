@@ -28,16 +28,15 @@ int pulling(int x, int y){
     sort(temp.begin(), temp.end());
     return temp[2];
     */
-   vector <int> a;
+   vector<int> temp;
 
-    a.push_back(board[x][y]);
-    a.push_back(board[x+1][y]);
-    a.push_back(board[x][y+1]);
-    a.push_back(board[x+1][y+1]);
+    temp.push_back(board[x][y]);
+    temp.push_back(board[x+1][y]);
+    temp.push_back(board[x][y+1]);
+    temp.push_back(board[x+1][y+1]);
 
-    sort(a.begin(), a.end());
-    return a[2];
-
+    sort(temp.begin(), temp.end());
+    return temp[2];
 }
 
 int main(){

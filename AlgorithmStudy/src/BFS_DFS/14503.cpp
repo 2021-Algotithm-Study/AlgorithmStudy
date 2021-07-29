@@ -9,19 +9,11 @@ int answer = 0;
 pair<int, int> robot;
 int board[51][51];
 bool check[51][51] = {false};
-
 int dx[] = {-1, 0, 1, 0};
 int dy[] = {0, 1, 0, -1};
 queue<pair<int, int>> q;
 
-
 void bfs(pair<int, int> x){
-    /*
-    if (board[x.first][x.second]){
-        cur = (cur + 1) % 4;
-        bfs(make_pair(dx[cur], dy[cur]));
-    }
-    */
     q.push(x);
     check[x.first][x.second];
 
@@ -51,14 +43,9 @@ void bfs(pair<int, int> x){
     }
 }
 
-void init_c(){
+int main(){
     std::ios_base::sync_with_stdio;
     cin.tie(NULL);
-    cout.tie(NULL);
-}
-
-int main(){
-    init_c();
     cin >> n >> m >> robot.first >> robot.second >> cur;
     for(int i = 0; i < n; i++){
         for(int j = 0; j < m; j++){
@@ -67,7 +54,7 @@ int main(){
     }
     bfs(robot);
 
-    cout >> answer;
+    cout << answer;
 
     return (0);
 }

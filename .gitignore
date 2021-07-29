@@ -6,6 +6,9 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.json
+*.sln
+*.out
 
 #compile
 *.vcxproj
