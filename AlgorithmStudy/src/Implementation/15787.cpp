@@ -2,15 +2,14 @@
 #include <vector>
 using namespace std;
 
-int n, m,cnt;
+int n, m, cnt;
 bool visit[1<<21];
 vector<int> v;
-
 
 int main()
 {
 	ios::sync_with_stdio(false);
-	cin.tie(NULL), cout.tie(NULL);
+	cin.tie(NULL);
 
 	cin >> n >> m;
 
