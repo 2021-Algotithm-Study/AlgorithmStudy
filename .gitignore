@@ -243,3 +243,8 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+dhuo
+AlgorithmStudy/AlgorithmStudy.vcxproj
+AlgorithmStudy/AlgorithmStudy.vcxproj.filters
+AlgorithmStudy/src/BFS_DFS/a.out
+AlgorithmStudy/src/BFS_DFS/a.out
