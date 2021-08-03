@@ -1,6 +1,7 @@
+//SWEA 1204 최빈값 구하기
+
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class java_1204 {
