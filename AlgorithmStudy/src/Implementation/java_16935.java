@@ -30,7 +30,9 @@ public class java_16935 {
             else if(cmd == 4)   rotate4();
             else if(cmd == 5)   rotate5(N/2, M/2);
             else                rotate6(N/2, M/2);
-            
+            int temp[][] = origin;
+            origin = copy;
+            copy = temp;
         }
         /*print*/
         for(int i = 0; i < N; i++){
@@ -47,11 +49,6 @@ public class java_16935 {
         for(int i = 0; i < N; i++)
             for(int j = 0; j < M; j++)
                 copy[i][j] = origin[N-1-i][j];
-
-        for(int i = 0; i < N; i++)
-            for(int j = 0; j < M; j++)
-                origin[i][j] = copy[i][j];
-
     }
     /*좌우반전*/
     static void rotate2(){
@@ -59,11 +56,6 @@ public class java_16935 {
             for(int j = 0; j < M; j++)
                 copy[i][j] = origin[i][M-1-j];
 
-        for(int i = 0; i < N; i++){
-            for(int j = 0; j < M; j++){
-                origin[i][j] = copy[i][j];
-            }
-        }
     }
 
     static void rotate3(){
@@ -73,9 +65,7 @@ public class java_16935 {
         int temp = N;
         N = M;
         M = temp;
-        for(int i = 0; i < N; i++)
-            for(int j = 0; j < M; j++)
-                origin[i][j] = copy[i][j];        
+     
     }
 
     static void rotate4(){
@@ -85,12 +75,8 @@ public class java_16935 {
         int temp = N;
         N = M;
         M = temp;
-        for(int i = 0; i < N; i++)
-            for(int j = 0; j < M; j++)
-                    origin[i][j] = copy[i][j];
     }
     static void rotate5(int n, int m){
-        //1번 -> copy의 1번영역 채우기
         for(int i = 0; i < n; i++){
             for(int j = 0; j < m; j++){
                 copy[i][j] = origin[i+n][j];
@@ -100,9 +86,6 @@ public class java_16935 {
             }
         }
 
-        for(int i = 0; i < N; i++)
-            for(int j = 0; j < M; j++)
-                    origin[i][j] = copy[i][j];
     }
     static void rotate6(int n, int m){
         for(int i = 0; i < n; i++){
@@ -113,9 +96,5 @@ public class java_16935 {
                 copy[i+n][j] = origin[i][j];
             }
         }
-
-        for(int i = 0; i < N; i++)
-            for(int j = 0; j < M; j++)
-                    origin[i][j] = copy[i][j];
     }
 }
