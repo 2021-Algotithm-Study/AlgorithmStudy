@@ -11,7 +11,6 @@ public class java_1182 {
     public static void main(String[] args) throws Exception{
         System.setIn(new FileInputStream("test.txt"));
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringBuilder sb = new StringBuilder();
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
         N = Integer.parseInt(st.nextToken());
         S = Integer.parseInt(st.nextToken());
