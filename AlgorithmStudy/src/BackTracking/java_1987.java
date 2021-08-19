@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 public class java_1987 {
     static int R, C;
-    static char[][] board;
+    static int[][] board;
     static int max;
 
     static int dx[] = {-1, 0, 1, 0};
@@ -15,31 +15,29 @@ public class java_1987 {
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
         R = Integer.parseInt(st.nextToken());
         C = Integer.parseInt(st.nextToken());
-        board = new char[R][C];
+        board = new int[R][C];
         for(int i = 0; i < R; i++){
             String temp = br.readLine();
             for(int j = 0; j < C; j++){
-                board[i][j] = temp.charAt(j);
+                board[i][j] = temp.charAt(j) - 'A';
             }
         }
         max = 1;
         /*do*/
-        dfs(0, 0, ""+board[0][0]);
+        dfs(0, 0, new boolean[26], 1);
         System.out.print(max);
-
         br.close();
     }
-    static void dfs(int x, int y, String s){
+    static void dfs(int x, int y, boolean[] visit, int ctr){
+        visit[board[x][y]] = true;
         for(int i = 0; i < 4; i++){
             int nx = x + dx[i];
-            int  ny = y + dy[i];
+            int ny = y + dy[i];
             if(nx >= 0 && nx < R && ny >= 0 && ny < C){
-                if(s.contains(""+board[nx][ny])){
-                    max = s.length() > max ? s.length() : max;
-                }else{
-                    dfs(nx, ny, s+board[nx][ny]);
-                }
+                if(!visit[board[nx][ny]])   dfs(nx, ny, visit, ctr+1);
+                else    max = ctr > max ? ctr : max;
             }
         }
+        visit[board[x][y]] = false;
     }
 }
