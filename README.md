@@ -1,7 +1,7 @@
 # AlgorithmStudy
 Baekjoon, Programmers, SWEA
 
->For much prettier algorithm. 2021-
+>For much prettier algorithm. 2021.05-
 
 **C++**
 ~~~c++
@@ -14,7 +14,7 @@ cout.tie(NULL);
 ~~~java
 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        
+
 br.close();
 bw.flush();
 bw.close();
