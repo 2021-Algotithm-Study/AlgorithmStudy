@@ -1,4 +1,4 @@
-//SWEA 3289 서로소집합
+//SWEA 3289 서로소집합  
 import java.io.*;
 import java.util.*;
 
